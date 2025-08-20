@@ -1,16 +1,30 @@
-class Heroi:
-    def __init__(self, nome, idade, tipo):
-        self.nome = nome
-        self.idade = idade
-        self.tipo = tipo.lower()
+class Heroi {
+    constructor(nome, idade, tipo) {
+        this.nome = nome;
+        this.idade = idade;
+        this.tipo = tipo.toLowerCase();
+    }
 
-    def atacar(self):
-        ataques = {
-            "mago": "usou magia",
-            "guerreiro": "usou espada",
-            "monge": "usou artes marciais",
-            "ninja": "usou shuriken"
+    atacar() {
+        let ataque;
+
+        switch (this.tipo) {
+            case "mago":
+                ataque = "usou magia";
+                break;
+            case "guerreiro":
+                ataque = "usou espada";
+                break;
+            case "monge":
+                ataque = "usou artes marciais";
+                break;
+            case "ninja":
+                ataque = "usou shuriken";
+                break;
+            default:
+                ataque = "usou um ataque desconhecido";
         }
 
-        ataque = ataques.get(self.tipo, "usou um ataque desconhecido")
-        print(f"O {self.tipo} atacou usando {ataque}")
+        console.log(`O ${this.tipo} atacou usando ${ataque}`);
+    }
+}
